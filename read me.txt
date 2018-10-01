@@ -1,0 +1,2 @@
+pour demarrer le projet l fauot passer par ce lien
+http://localhost:8000/index
