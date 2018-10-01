@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}connexion{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-state=1">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+    <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+  <style type="text/css">
+  </script>
+  <style type="text/css">
+  #sc
+  </style>
+
+</head>
+<body>
+ {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+    <header>
+            <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="{{url('home')}}">page d'acceuil</a>
+           </div>
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="{{url('create_article_view')}}" >creer un article</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="">categorie article
+                        <span class="caret"></span></a>
+                             <ul class="dropdown-menu">
+                                 <li><a href="#">education</a></li>
+                                      <li><a href="#">politique</a></li>
+                                        <li><a href="#">musique</a></li>
+                                        <li><a href="#">sport</a></li>
+                                         <li><a href="#">autre</a></li>
+                                          
+                              </ul>
+                                    </li>
+                                    <li><a href="{{url('list_article_view')}}" >lister de tous articles</a></li>
+                                      <li><a href="#">deconnexion</a></li>
+              </ul>
+          </div>
+      </nav>
+    </header>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="jumbotron">
+      <h1>Bienvenue dans le blog de saliou</h1> 
+          <p>ceci est un blog interessant qui vous permettra de savoir tout sur l'actualite en temps reels en vous proposant des articles extraordinaires.</p> 
+    </div>
+    {% endblock %}
+    {% block body %}
+
+ {% endblock %}
+  </body>
+    </html>
+    

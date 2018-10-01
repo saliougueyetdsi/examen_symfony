@@ -1,0 +1,39 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        BlogBundle\Entity\Userauth:
+            algorithm: bcrypt
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        our_db_provider:
+            entity:
+                class: BlogBundle:Userauth
+                property: username
+                # if you're using multiple entity managers
+                # manager_name: customer
+        in_memory:
+            memory: ~
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            http_basic: ~
+            provider: our_db_provider
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~
+
+
+    access_control:
+            # require ROLE_ADMIN for /admin*
+            - { path: ^/admin, roles: ROLE_ADMIN }

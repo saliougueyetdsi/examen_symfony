@@ -1,0 +1,22 @@
+{% extends 'blog/layout.html.twig' %}
+
+{% block title %}BlogBundle:Article:addUser{% endblock %}
+{% block content %}{{parent()}}{% endblock %}
+
+
+{% block body %}
+<ul>
+{% for article in articles %}
+<li>
+<h3>{{article.titre}}</h3>
+<img 
+  src="{{asset('uploads/imgs/')}}{{article.image.alt}}"
+
+  
+>
+<h3>{{article.description|slice(0 ,300)}}<a href ="{{url('article_view',{id:article.id} )}}">  lire plus </a>
+</li>
+
+
+{% endfor %}
+{% endblock %}

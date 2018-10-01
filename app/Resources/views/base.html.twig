@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}connexion{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-state=1">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+    <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+  <style type="text/css">
+  </script>
+  <style type="text/css">
+  #sc
+  </style>
+
+</head>
+<body>
+     {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+    <header>
+            <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="{{url('home')}}">page d'acceuil</a>
+           </div>
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="{{url('create_article_view')}}" >creer un article</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">categorie article
+                        <span class="caret"></span></a>
+                             <ul class="dropdown-menu">
+                                 <li><a href="{{url('list_article_education')}}">education</a></li>
+                                      <li><a href="{{url('list_article_politique')}}">politique</a></li>
+                                        <li><a href="{{url('list_article_musique')}}">musique</a></li>
+                                        <li><a href="{{url('list_article_sport')}}">sport</a></li>
+                                         <li><a href="{{url('list_article_autre')}}">autre</a></li>
+                                          
+                              </ul>
+                                    </li>
+                                    <li><a href="{{url('list_article_view')}}" >listes de tous les articles </a></li>
+                                      <li><a href="#">deconnexion</a></li>
+              </ul>
+          </div>
+      </nav>
+    </header>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="jumbotron">
+      <h1>Bienvenue dans le blog de saliou</h1> 
+          <p>ceci est un blog interessant qui vous permettra de savoir tout sur l'actualite en temps reels en vous proposant des articles extraordinaires.</p> 
+    </div>
+  </div>
+</div>
+  <div class="row ">
+      <div class="col-md-8">
+        <article role="article">
+          <header>
+              <h1><a href="" title="">Sadio mane encore nomine pour le joueur de la semaine en champions league</a></h1>
+              <img src="{{asset('uploads/image/Sadio.jpg')}}">
+              <time datetime="2//05/2018" pubdate="mai 2018"></time>
+          </header>
+
+                
+              <div class="content">
+              Sadio Mané aime bien les soirées de Ligue des Champions. L'attaquant sénégalais auteur du premier but de Liverpool contre la Roma en demi-finale, a été encore nominé pour le titre de joueur de la semaine. le joueur des Reds a déjà remporté deux fois ce titre honorifique. Son concurrent est le gardien du Real Madrid Keylor Navas. Les deux joueurs vont s'affronter le 26 mai pour la finale de la Ligue des Champions. Pour rappel Liverpool a rapidement ouvert le score sur le terrain de la Roma ce mercredi. Sadio Mané a marqué sur une contre-attaque initiée par une mauvaise transmission de Nainggolan au milieu, parfaitement exploitée par Roberto Un Brésilien buteur en série, un Pharaon en feu et un Lion de la Téranga intenable. Liverpool dispose d’un trio d’attaque de rêve cette saison avec Roberto Firmino en pointe et Mohamed Salah et Sadio Mané sur les ailes. La Roma peut encore en témoigner. Lors de la demi-finale aller de la Ligue des champions, le 24 mai, les Giallorossi avaient explosé face aux deux premiers notamment (deux buts et deux passes décisives chacun, et un but de Mané). Et ce mercredi 2 mai, c’est le Sénégalais qui a enterré leurs espoirs.
+
+Certes, Liverpool a perdu (4-2). Mais les Reds sont quand même qualifiés pour la finale face au Real Madrid. Au Stadio Olimpico, Sadio Mané a été à la hauteur des événements.
+              </div>
+        </article> 
+      </div>
+    <aside class="col-md-4">
+          <div class="panel panel-defaut">
+            <div class="panel-heading bg-success" >se connecter</div>
+              <div class="panel-body">
+               
+
+
+
+  
+                    <div class="form-group" id="sc">
+                      <form  action="loginaction.php" method="POST">
+                        <label for="email">email</label>
+                      <input type="email" class="form-control"  name="email">
+                      <label for="pwd">Password:</label>
+                     <input type="password" class="form-control"  name="password">
+                     <input type="submit" class="form-control"  value="se connecter" >
+                     </form>
+                     <p><small>si vous n'avez pas de compte  <a href="{{asset('connection.php')}}">s'inscrire</a></small></p>
+                   
+    </div>
+                
+               
+              
+              </div>
+               {% endblock %}
+
+
+</body>
+
+</html>

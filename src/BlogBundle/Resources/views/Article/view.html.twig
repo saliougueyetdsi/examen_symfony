@@ -1,0 +1,32 @@
+{% extends 'blog/layout.html.twig' %}
+
+{% block title %}BlogBundle:Article:addUser{% endblock %}
+
+{% block body %}
+<h1>liste des articles</h1>
+<h2> {{article.titre}}</h2>
+<img 
+  src="{{asset('uploads/imgs/')}}{{article.image.alt}}"
+
+  
+>
+<h2> {{article.description}}</h2>
+
+
+ 
+<div class="well">
+  {{ form(form) }}
+  {{ form_widget(form) }}
+  {{ form_end(form) }}
+</div>
+<ul>
+{% for commentaire in article.commentaires %}
+<li>
+{{commentaire.contenu}}
+</li>
+{% endfor %}
+</ul>
+
+
+  
+{% endblock %}
